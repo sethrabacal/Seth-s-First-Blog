@@ -1,8 +1,19 @@
 <html>
-<h1>
+  <head>
     <title> Seth's First Blog </title>
-<p> Welcome to my first blog! </p>
-</h1>
-<body>
-<p> Follow my YouTube channel: https://www.youtube.com/channel/UCMWHhRY7Iuxwm1hF1Fv-btw </p>
- 
+  </head>
+  <body>
+    <div>
+        <h1><a href="/">Django Girls Blog</a></h1>
+    </div>
+
+    {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+
+  </body>
+</html>
